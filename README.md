@@ -21,3 +21,7 @@ The following routes were designed for the API.
 | POST | api/cyclings | Survey_wave, Location, Survey_date, Weather, Time, Period, Direction, Number_of_private_cycles, Number_of_cycle_hire_bikes, Total_cycles, Year, cycling_id| Return all the details of the updated cycling data record|`prepared_central_london_(area).csv` | `prepared_central_london_(area).csv` |
 | PATCH | api/cyclings/{location}/{survey_date}/{time}/{direction} | Changed fields for the cycling data record | Status code 200 if new NOC code was saved. | `prepared_central_london_(area).csv` |
 | DELETE | api/cyclings/{location}/{survey_date}/{time}/{direction} | None | Removes a cycling data record and if successful returns  200 (Accepted) | `prepared_central_london_(area).csv` |
+
+### Testing
+
+![image](
