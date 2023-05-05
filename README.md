@@ -4,9 +4,7 @@
 
 You will need to a Python environment e.g create and activate a venv.
 
-Install the packages from requirements.txt.
-
-Install the apps e.g. `pip install -e .`
+Install the packages from requirements.txt using `pip install -r requirements.txt`
 
 ## Activities
 
