@@ -10,18 +10,18 @@ To run the code pass through the following command via terminal `flask --app 'cy
 
 To run the tests pass through ` python -m pytest -vv tests/tests_cycling_app/ -W ignore::DeprecationWarning`
 
-## Activities
+### The routes
 
-The activities are accessed from [activities/activities.md](/activities/activities.md).
+The following routes were designed for the API.
 
-
-To set up your project:
-
-1. Clone this repository in your IDE (e.g. PyCharm, Visual Studio Code) from GitHub. Follow the help in your IDE
-   e.g. [clone a GitHub repo in PyCharm.](https://www.jetbrains.com/help/pycharm/manage-projects-hosted-on-github.html#clone-from-GitHub)
-2. Create and then activate a virtual environment (venv). Use the instructions for your IDE
-   or [navigate to your project directory and use python.](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)
-3. Install the requirements from requirements.txt. Use the instructions for your IDE
-   or [the pip documentation](https://pip.pypa.io/en/latest/user_guide/#requirements-files).
-4. Edit .gitignore to add any config files and folders for your IDE. 
-
+| HTTP method | URL | Body | Response | Where the data is |
+|:---- |:---- |:---- |:---- | :---- |
+| GET | api/noc | None | Returns a list of NOC region codes with region name and notes | `noc_regions.csv` |
+| GET | api/noc/{code} | None | Returns the region name and notes for a given code | `noc_regions.csv` |
+| PATCH | api/noc/{code} | Changed fields for the NOC record| Return all the details of the updated NOC record|`noc_regions.csv` | `noc_regions.csv` |
+| POST | api/noc | Region code, region name and (optional) notes | Status code 201 if new NOC code was saved. | `noc_regions.csv` |
+| DELETE | api/noc/{code} | None | Removes an NOC code and if successful returns  202 (Accepted) | `noc_regions.csv` |
+| GET | api/event | None | Returns a list of events with all details | `paralympics.csv` |
+| GET | api/event/{event_id} | None | Returns all the details for a given event |`paralympics.csv` |
+| POST | api/event | Event details| Status code 201 if new event was saved. |`paralympics.csv` |
+| PATCH | api/event/{event_id} | Event details to be updated (specific fields to be passed) | Return all the details of the updated event|`paralympics.csv` |
