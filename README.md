@@ -24,4 +24,4 @@ The following routes were designed for the API.
 
 ### Testing
 
-![image](
+![image](tests.jpg)
