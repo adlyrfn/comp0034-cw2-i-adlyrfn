@@ -24,6 +24,12 @@ The following routes were designed for the API.
 
 ### Testing
 
-Tests were perform for the 
+Tests were performed for the routes introduced and models. 
 
 ![image](tests.jpg)
+
+From the picture shown all tests were passed.
+
+### Error handling
+
+To make sure users have a smooth experience of using the app errors can be customised. Error templates are introduced in the templates folder. The error handlers are placed in a file called main_routes.py. This is then folowed by, addind the handlers to the routes module just after the blueprint is defined.
