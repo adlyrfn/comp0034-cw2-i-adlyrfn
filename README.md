@@ -1,5 +1,17 @@
-[![Open in Visual Studio Code](https://github.com/adlyrfn/comp0034-cw2-i-adlyrfn.git)]
 # COMP0034 Coursework 2
+
+## Set-up
+
+You will need to a Python environment e.g create and activate a venv.
+
+Install the packages from requirements.txt.
+
+Install the apps e.g. `pip install -e .`
+
+## Activities
+
+The activities are accessed from [activities/activities.md](/activities/activities.md).
+
 
 To set up your project:
 
