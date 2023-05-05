@@ -16,12 +16,9 @@ The following routes were designed for the API.
 
 | HTTP method | URL | Body | Response | Where the data is |
 |:---- |:---- |:---- |:---- | :---- |
-| GET | api/noc | None | Returns a list of NOC region codes with region name and notes | `noc_regions.csv` |
-| GET | api/noc/{code} | None | Returns the region name and notes for a given code | `noc_regions.csv` |
-| PATCH | api/noc/{code} | Changed fields for the NOC record| Return all the details of the updated NOC record|`noc_regions.csv` | `noc_regions.csv` |
-| POST | api/noc | Region code, region name and (optional) notes | Status code 201 if new NOC code was saved. | `noc_regions.csv` |
-| DELETE | api/noc/{code} | None | Removes an NOC code and if successful returns  202 (Accepted) | `noc_regions.csv` |
-| GET | api/event | None | Returns a list of events with all details | `paralympics.csv` |
-| GET | api/event/{event_id} | None | Returns all the details for a given event |`paralympics.csv` |
-| POST | api/event | Event details| Status code 201 if new event was saved. |`paralympics.csv` |
-| PATCH | api/event/{event_id} | Event details to be updated (specific fields to be passed) | Return all the details of the updated event|`paralympics.csv` |
+| GET | api/cyclings | None | Returns a list of all cycling data and their details in JSON format | `prepared_central_london_(area).csv` |
+| GET | api/cyclings/<location>/<survey_date>/<time>/<direction> | None | Returns the region name and notes for a given code | `prepared_central_london_(area).csv` |
+| POST | api/cyclings | Changed fields for the NOC record| Return all the details of the updated NOC record|`prepared_central_london_(area).csv` | `prepared_central_london_(area).csv` |
+| PATCH | api/cyclings/<location>/<survey_date>/<time>/<direction> | Region code, region name and (optional) notes | Status code 201 if new NOC code was saved. | `prepared_central_london_(area).csv` |
+| DELETE | api/cyclings/<location>/<survey_date>/<time>/<direction> | None | Removes an NOC code and if successful returns  202 (Accepted) | `prepared_central_london_(area).csv` |
+| PATCH | api/cyclings/<location>/<survey_date>/<time>/<direction> | None | Returns a list of events with all details | `prepared_central_london_(area).csv` |
