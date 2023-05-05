@@ -1,4 +1,4 @@
-[![Open in Visual Studio Code](https://github.com/adlyrfn/comp0034-cw2-i-adlyrfn.git)
+[![Open in Visual Studio Code](https://github.com/adlyrfn/comp0034-cw2-i-adlyrfn.git)!]
 # COMP0034 Coursework 2
 
 To set up your project:
