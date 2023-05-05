@@ -146,40 +146,6 @@ def cyclings_delete(location, survey_date, time, direction):
     response.headers["Content-type"] = "application/json"
     return response
 
-@api_bp.patch("/cyclings/<location>/<survey_date>/<time>/<direction>")
-def cycling_update(location, survey_date, time, direction):
-    """Updates changed fields for the event
-    TODO: does not handle a partial update despite partial=True
-    """
-    # Find the current event in the database
-    existing_event = db.session.execute(
-        db.select(Cycling).filter_by(
-        Location=location,
-        Survey_date=survey_date,
-        Time=time,
-        Direction=direction
-        )
-    ).scalar_one_or_none()
-    # Get the updated details from the json sent in the HTTP patch request
-    cycling_json = request.get_json()
-    # Use Marshmallow to update the existing records with the changes in the json
-    cycling_schema.load(cycling_json, instance=existing_event, partial=True)
-    # Commit the changes to the database
-    db.session.commit()
-    # Return json showing the updated record
-    updated_event = db.session.execute(
-        db.select(Cycling).filter_by(
-        Location=location,
-        Survey_date=survey_date,
-        Time=time,
-        Direction=direction
-        )
-    ).scalar_one_or_none()
-    result = cycling_schema.jsonify(updated_event)
-    response = make_response(result, 200)
-    response.headers["Content-Type"] = "application/json"
-    return response
-
 def get_cyclings():
     """A function to get all cyclings from database as objects which will be converted to JSON"""
     all_cyclings = db.session.execute(db.select(Cycling)).scalars()
