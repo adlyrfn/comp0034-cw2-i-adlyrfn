@@ -6,6 +6,10 @@ You will need to a Python environment e.g create and activate a venv.
 
 Install the packages from requirements.txt using `pip install -r requirements.txt`
 
+To run the code pass through the following command via terminal `flask --app 'cycling_app:create_app()' --debug run`
+
+To run the tests pass through ` python -m pytest -vv tests/tests_cycling_app/ -W ignore::DeprecationWarning`
+
 ## Activities
 
 The activities are accessed from [activities/activities.md](/activities/activities.md).
