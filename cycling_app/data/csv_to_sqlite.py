@@ -12,7 +12,7 @@ engine = create_engine("sqlite:///" + str(db_file), echo=False )
 inspector = inspect(engine)
 
 # The prepared central london data is read to a pandas dataframe
-cycling_file = Path(__file__).parent.joinpath("prepared_central_london_(area).csv")
+cycling_file = Path(__file__).parent.joinpath("prepared_central_london_(area)_1.csv")
 cycling = pd.read_csv(cycling_file)
 
 # The data read is written in a sqlite database
@@ -35,6 +35,6 @@ cycling.to_sql(
     "cycling", engine, if_exists="append", index=False, dtype=dtype_cycling
 )
 
-columns = inspector.get_columns('cycling')
-for column in columns:
-    print(column['name'])
+# columns = inspector.get_columns('cycling')
+# for column in columns:
+#     print(column['name'])

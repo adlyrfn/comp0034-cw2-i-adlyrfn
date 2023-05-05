@@ -1,4 +1,5 @@
-from flask import render_template, Blueprint, abort
+from flask import render_template, Blueprint, abort, request
+from flask_paginate import Pagination, get_page_parameter
 from cycling_app.api_routes import get_cycling, get_cyclings
 
 # Define the Blueprint
@@ -18,9 +19,17 @@ def page_not_found(e):
 
 @main_bp.route("/")
 def index():
-    "Returns the home menu"
+    """Returns the home menu"""
     response = get_cyclings()
     # print(response)
+    # page = request.args.get('page')
+
+    # if page and page.isdigit():
+    #     page = int(page)
+    # else: 
+    #     page = 1
+
+    # pages = response.query.paginate(page=page, per_page=10)    
     return render_template("index.html", cycling_list=response)
 
 @main_bp.route("/display_cycling/<cycling_id>")

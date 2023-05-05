@@ -34,7 +34,6 @@ def cyclings():
     # Obatin the data using Marshmallow schema (returns JSON)
     result = cyclings_schema.dump(all_locations)
     response = make_response(result, 200)
-    print(response)
     response.headers["Content-Type"] = "application/json"
     # Return the data requested
     return response
@@ -142,7 +141,7 @@ def cyclings_delete(location, survey_date, time, direction):
     db.session.commit()
     # This example returns a custom HTTP response using flask make_response
     # https://flask.palletsprojects.com/en/2.2.x/api/?highlight=make_response#flask.make_response
-    text = jsonify({"Successfully deleted": cycling.Location + cycling.Survey_date_formatted + cycling.Time + cycling.Direction})
+    text = jsonify({"Successfully deleted": cycling.Location + cycling.Survey_date + cycling.Time + cycling.Direction})
     response = make_response(text, 200)
     response.headers["Content-type"] = "application/json"
     return response
