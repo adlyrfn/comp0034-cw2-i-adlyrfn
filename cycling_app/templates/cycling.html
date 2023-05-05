@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{% set title = cycling["Number_of_private_cycles"] %}
+{% block content %}
+
+
+<h1>{{ cycling['Location']}} {{ cycling['Survey_date'] }} ({{ cycling['Time'] }} {{ cycling['Direction'] }})</h1>
+<ul>
+    <li id="survey_wave">Survey wave: {{ cycling['Survey_wave']}}</li>
+    <li id="weather">Weather: {{ cycling['Weather']}}</li>
+    <li id="period">Period: {{ cycling['Period']}}</li>
+    <li id="number_of_private_cycles">Number of private cycles: {{ cycling['Number_of_private_cycles']}}</li>
+    <li id="number_of_cycle_hire_bikes">Number of cycle hire bikes: {{ cycling['Number_of_cycle_hire_bikes']}}</li>
+    <li id="total_cycles">Total cycles: {{ cycling['Total_cycles']}}</li>
+    <li id="year">Year: {{ cycling['Year']}}</li>
+    <li id="cycling_id">cycling_id: {{ cycling['cycling_id']}}</li>
+</ul>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% set title = 'Cyclings Home' %}
+{% block content %}
+
+<h1>Cycling events</h1>
+<p>We have data for the following cycling events</p>
+<ul>
+    {% for cycling in cycling_list %}
+    <li><a id="{{ cycling['cycling_id'] }}" href="{{ url_for('main.display_cycling', cycling_id=cycling['cycling_id'])}}">{{
+            cycling['Location'] }} {{ cycling['Survey_date'] }}
+            ({{ cycling['Time'] }} {{ cycling['Direction'] }})</a></li>
+    {% endfor %}
+</ul>
+
+
+{% endblock %}
