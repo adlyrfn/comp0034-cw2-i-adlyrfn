@@ -12,7 +12,7 @@ engine = create_engine("sqlite:///" + str(db_file), echo=False )
 inspector = inspect(engine)
 
 # The prepared central london data is read to a pandas dataframe
-cycling_file = Path(__file__).parent.joinpath("prepared_central_london_(area)_1.csv")
+cycling_file = Path(__file__).parent.joinpath("prepared_central_london_(area).csv")
 cycling = pd.read_csv(cycling_file)
 
 # The data read is written in a sqlite database
